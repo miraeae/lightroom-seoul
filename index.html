@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirae's Portfolio</title>
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <nav class="gnb">
+                <ul class="gnb__list">
+                    <li class="gnb__item">
+                        <a href="#">EXHIBITION</a>
+                    <li class="gnb__item">
+                        <a href="#">ABOUT</a>
+                    </li>
+                    <li class="gnb__item gnb__item-with-submenu"><a href="#">VISIT</a>
+                        <ul class="gnb__submenu">
+                            <li>
+                                <a href="#">YOUR VISIT</a>
+                            </li>
+                            <li>
+                                <a href="#">FACILITY</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <a href="#">
+                    <svg width="161" height="21" viewBox="0 0 161 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#a)" fill="#fff"><path d="M3.654 16.184h8.685v3.462H0V.412h3.654v15.772Z"></path>
+                            <path d="M15.027.417h3.654v19.23h-3.654V.417Z"></path>
+                            <path d="M35.611 7.126C34.79 4.639 33.147 3.3 30.41 3.3c-4.006 0-5.737 2.886-5.737 6.988 0 3.717 1.763 6.538 6.154 6.538 4.07 0 5.224-1.858 5.224-3.91v-.257h-5.673V9.423h9.134v10.223h-3.461v-4.455h-.065c-.64 2.693-2.627 4.775-6.377 4.775-5.417 0-8.59-4.037-8.59-9.678C21.02 4.327 24.258.03 30.57.03c4.734 0 7.55 2.452 8.545 6.406l-3.504.689Z"></path>
+                            <path d="M55.085 19.646v-7.915h-9.294v7.915h-3.654V.417h3.654v7.852h9.294V.417h3.654v19.23h-3.654Z"></path>
+                            <path d="M60.883.417h15.512v3.46h-5.93v15.77h-3.653V3.876h-5.93V.418Z"></path>
+                            <path d="M82.195 3.654V8.78h4.358c2.212 0 3.461-.96 3.461-2.692 0-1.538-.897-2.435-3.269-2.435h-4.55Zm3.204 8.364h-3.204v7.63H78.54V.416h8.364c4.52 0 6.699 2.083 6.699 5.576 0 3.077-1.57 5.032-4.391 5.738l5.64 7.852v.064h-4.422L85.4 12.018Z"></path>
+                            <path d="M111.357 9.935c0-3.686-2.179-6.635-6.217-6.635-4.006 0-6.218 2.95-6.218 6.635 0 4.039 2.148 6.828 6.218 6.828s6.217-2.79 6.217-6.828Zm-16.056.033C95.3 4.23 99.147 0 105.14 0c6.057 0 9.871 4.23 9.871 9.968 0 5.768-3.686 10.095-9.871 10.095-6.153 0-9.84-4.327-9.84-10.095Z"></path>
+                            <path d="M132.607 9.935c0-3.686-2.178-6.635-6.217-6.635-4.006 0-6.218 2.95-6.218 6.635 0 4.039 2.148 6.828 6.218 6.828s6.217-2.79 6.217-6.828Zm-16.056.033c0-5.737 3.846-9.968 9.839-9.968 6.057 0 9.871 4.23 9.871 9.968 0 5.768-3.686 10.095-9.871 10.095-6.153 0-9.839-4.327-9.839-10.095Z"></path>
+                            <path d="M141.784 19.647h-3.493V.417h5.737l3.237 8.653c.513 1.314 1.41 3.973 2.115 6.346.737-2.34 1.603-4.968 2.18-6.475l3.237-8.524h5.287v19.23h-3.653v-8.91c0-2.244.096-5.064.161-7.308-.77 2.5-1.795 5.673-2.885 8.558l-2.949 7.66h-3.333l-2.852-7.789a142.933 142.933 0 0 1-2.789-8.429h-.031c.031 2.244.031 5.032.031 7.307v8.911Z"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="a">
+                                <path fill="#fff" d="M0 0h160.084v20.063H0z"></path>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+            <div class="util">
+                <!-- <select name="languages" class="util__language">
+                    <option value="kor">KOR</option>
+                    <option value="eng">ENG</option>
+                <select> -->
+                <ul class="util__language">
+                    <li class="util__language-item util__language-item--selected">
+                        <a href="#">KOR</a>
+                        <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 0H0l3 4 3-4Z" fill="#fff"></path>
+                        </svg>
+                    </li>
+                    <li class="util__language-item">
+                        <a href="#">ENG</a>
+                    </li>
+                </ul>
+                <a class="util__btn" href="#">예매하기</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero sec">
+            <p class="hero__date">2025.01.22 - 2025.01.31</p>
+            <h2 class="hero__title">COLDPLAY:<br/>
+                A Film For The Future</h2>
+            <div class="hero__btm">
+                <p class="hero__desc">새로운 음악을 미래에 전하다. 전 세계 45개국 150명의 비주얼 아티스트들이 선보이는
+                영상미와 함께 COLDPLAY의 ‘Moon Music’ 을 감상할 수 있는 유일한 기회.</p>
+                <a class="hero__btn" href="#">티켓 예매하기
+                    <svg class="svg-arrow" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 16L26 16" stroke="white" stroke-width="1.5"></path>
+                        <path d="M18 8L26 16L18 24" stroke="white" stroke-width="1.5"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    &__inner{
+        display:grid;
+        grid-template-columns: 1fr 161px 1fr;
+        padding:1.5rem 2.5rem;
+        font-weight: 300;
+        align-items: center;
+    }
+}
+
+.gnb{
+    &__list{
+        display:flex;
+        flex-direction: row;
+        gap: 3rem;
+
+        li{
+            position: relative;
+            display:inline-block;
+            font-weight: 300;
+
+            &:before{
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: white;
+                transform-origin: left;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover:before{
+                width:100%;
+            }
+        }
+    }
+
+    &__item-with-submenu{
+        .gnb__submenu{
+            position: absolute;
+            white-space: nowrap;
+            padding-top: 0.2rem;
+            display:flex;
+            gap: 0.9rem;
+            transition: 0.3s ease-in-out opacity;
+            opacity: 0;
+        }
+        &:hover{
+            .gnb__submenu{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.util{
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    gap: 1.56rem;
+
+    &__language{
+        &-item{
+            opacity: 0;
+            padding-top: 0.3rem;
+            position: absolute;
+            transition: opacity 0.3s ease-in-out;
+            &--selected{
+                position: relative;
+                opacity: 1;
+                padding-top: 0;
+                svg{
+                    vertical-align: middle;
+                }
+            }
+        }
+        &:hover{
+            li{
+                opacity: 1;
+            }
+        }
+
+    }
+
+    &__btn{
+        display: block;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid $color-white;
+        padding:8px 12px;
+        border-radius: 50px;
+        backdrop-filter: blur(2px);
+        line-height: 1;
+        transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        &:hover{
+            background-color: $color-white;
+            color:$color-black;
+        }
+    }
+}

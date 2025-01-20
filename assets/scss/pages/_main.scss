@@ -1,0 +1,74 @@
+.hero{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:url(../../assets/images/intro-img-min.jpg) no-repeat center center / cover;
+    color:#fff;
+    padding:3.75rem;
+
+    &__date{
+        font-size:1.75rem;
+        margin-bottom: 2rem;
+    }
+    &__title{
+        font-size:5.2vw;
+        line-height: 1.1;
+        font-weight: 300;
+    }
+
+    &__btm{
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        border-top:1px solid #fff;
+        margin-top: 3.75rem;
+        padding-top: 2.2rem;
+    }
+
+    &__desc{
+        max-width: 510px;
+        color:#cdcdcd;
+        line-height: 1.8;
+    }
+
+    &__btn{
+        position: relative;
+        font-size:1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        backdrop-filter: blur(12px);
+        border: 1px solid $color-white;
+        border-radius: 50px;
+        padding:0.8rem 1.5rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        &:before{
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: $color-white;
+            transition: all 0.3s ease;
+        }
+        &:hover{
+            color:$color-black;
+            &:before{
+                width:100%;
+            }
+            svg path{
+                stroke: $color-black;
+            }
+        }
+    }
+}
+
+
+.light-sec{
+    color:$color-black;
+}

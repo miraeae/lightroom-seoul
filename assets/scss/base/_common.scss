@@ -1,0 +1,19 @@
+body {
+    font-family: 'pretendard', sans-serif;
+    line-height: 1.5;
+    color:#fff;
+    letter-spacing: -0.05em;
+}
+h2, h3{
+    font-family: "Marcellus", serif;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: polygon(0 0, 0 0, 0 0);
+    white-space: nowrap;
+}
