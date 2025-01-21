@@ -1,8 +1,8 @@
 @mixin desktop {
-    @media (max-width: #{$desktop}) {
-      @content;
-    }
+  @media (max-width: #{$desktop}) {
+    @content;
   }
+}
 
 @mixin laptop {
   @media (max-width: #{$laptop}) {
@@ -11,13 +11,13 @@
 }
 
 @mixin tablet {
-    @media (max-width: #{$tablet}) {
-      @content;
-    }
+  @media (max-width: #{$tablet}) {
+    @content;
   }
+}
 
 @mixin mobile {
-    @media (max-width: #{$mobile}) {
-      @content;
-    }
+  @media (max-width: #{$mobile}) {
+    @content;
   }
+}

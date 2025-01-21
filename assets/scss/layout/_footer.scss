@@ -1,0 +1,106 @@
+.footer{
+    background-color: $color-darkgray;
+    border-top: 1px solid $color-white;
+    font-size:0.875rem;
+
+    &__row--top{
+        display: flex;
+        flex-direction: column;
+        padding: $gutter-size;
+        padding-bottom: 15.625rem;
+
+    }
+    &__title{
+        font-size:14vw;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 1;
+    }
+    &__btn-wrap{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 4rem;
+    }
+
+
+    // row btm
+    &__row--btm{
+        position: relative;
+        padding: $gutter-size;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 2rem;
+
+        &:before{
+            content:'';
+            position: absolute;
+            display:block;
+            width:calc(100% - $gutter-size * 2);
+            height:1px;
+            background:#3a3a3a;
+            top:0;
+            left: $gutter-size;
+        }
+    }
+
+    &__info{
+        grid-row: 1 / 3;
+        .footer__logo{
+            width:74px;
+            img{
+                width:100%;
+            }
+        }
+        &-list{
+            margin-top: 1.25rem;
+            max-width:300px;
+        }
+        &-item{
+            display: inline-block;
+            color: #cdcdcd;
+            &--dash{
+                position: relative;
+                padding-right:20px;
+                &:before{
+                    content:'';
+                    position: absolute;
+                    display: block;
+                    width:1px;
+                    height:60%;
+                    top:20%;
+                    right:8px;
+                    background:#dadada;
+                    opacity: 0.2;
+                }
+            }
+        }
+        small{
+            display: block;
+            color:#626262;
+            margin-top: 0.75rem;
+        }
+    }
+
+    h6{
+        font-family: $font-en;
+        color:#cdcdcd;
+        margin-bottom:0.8rem;
+    }
+
+    &__sitemap{
+        grid-row: 1 / 3;
+        li{
+            line-height: 2.2;
+        }
+    }
+
+    &__contact{
+        li{
+            a{
+                border-bottom:1px solid $color-white;
+            }
+        }
+    }
+
+}
