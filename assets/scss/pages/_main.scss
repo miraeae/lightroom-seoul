@@ -1,7 +1,10 @@
 /* Intro */
 .intro{
-    position: relative;
-    height: 60vh;
+    position: absolute;
+    height: 70vh;
+    left:0;
+    width:100%;
+    z-index: 1;
 
     &__title{
         position: absolute;
@@ -12,19 +15,35 @@
         text-align: center;
         font-size: 8vw;
         line-height: 1;
+        span{
+            display: block;
+        }
     }
 }
 
 
 /* Hero */
 .hero{
+    padding:0;
+    width:100%;
     height:100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background:url(../../assets/images/intro-img-min.jpg) no-repeat center center / cover;
-    color:#fff;
-    padding-bottom: $gutter-size;
+    background-color: $color-black;
+
+    &__inner{
+        position: relative;
+        padding-top: 70vh; //height값 잡히게하려고 padding으로 처리
+        z-index: -1;
+    }
+    &__content{
+        height:100vh;
+        background:url(../../assets/images/intro-img-min.jpg) no-repeat center center / cover;
+        padding-left: $gutter-size;
+        padding-right: $gutter-size;
+        padding-bottom: $gutter-size;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
 
     &__date{
         font-size:1.75rem;
@@ -53,6 +72,7 @@
 
 /* Hello */
 .hello{
+    position: relative;
     padding-top: $gutter-size;
     width:100%;
     text-align: center;
@@ -64,18 +84,18 @@
         max-width:1350px;
         margin-top: 3rem;
         line-height: 1;
-
         span{
             padding:0.6rem 0;
             display: block;
         }
-
         img{
             width:auto;
             height: 4.35vw;
             vertical-align: middle;
+            padding:0 1.25rem;
         }
     }
+
     &__desc{
         margin-top: 4.5rem;
         color:#626262;
@@ -86,7 +106,6 @@
 .exhib{
     padding-top:60vh;
     padding-bottom:20vh;
-    background:$color-darkgray;
 
     &__title{
         position: relative;
@@ -120,38 +139,58 @@
 .about{
     padding-top:40vh;
     padding-bottom: 20vh;
+    overflow: hidden;
 
-    &__grid{
+    &__grid-container{
+        position: relative;
         height:100vh;
+    }
+    &__grid{
         display:grid;
+        height:100%;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, minmax(100px, auto));
         gap:5rem;
         padding: $gutter-size-small;
-
-        img{
+        z-index: 1;
+        transform: scale(1);
+        &-item{
+            img{
             width: 100%;
             height: 100%;
             object-fit: cover;
+            }
         }
     }
 
     &__title-wrap{
-        margin-bottom: 15.63rem;
+        position: relative;
+        z-index: 2;
+        padding-top: 200vh;
+    }
+    &__content{
+        margin-top: 15.63rem;
+        position: relative;
+        z-index: 2;
     }
 }
 
 /* Space */
 .space{
+    height:400vh; //스크롤 영역
+
+    &__inner{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(100px, auto);
     grid-template-rows: 1fr 70px;
     height:100vh;
     align-items: center;
+    }
 
     &__col--half{
         text-align: center;
+        position: relative;
     }
 
     // text
@@ -165,11 +204,11 @@
         font-size:1.25rem;
     }
     &__title-wrap{
-        height: 3.8vw;
+        height: 4.7vw;
         overflow: hidden;
         .space__title{
             font-size:3.8vw;
-            line-height: 1;
+            line-height: 1.2;
         }
     }
     &__desc-wrap{
@@ -192,20 +231,18 @@
         }
         &-item{
             border-bottom: 1px solid $color-white;
-            opacity: 0.2;
-        }
-        &-item.active{
-            opacity: 1;
         }
     }
 }
 
 .visit{
-    padding-top: 80vh;
+    position: relative;
+    padding-top: 60vh;
     padding-bottom: 30vh;
     width:100%;
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__title{
         font-size:8.3vw;
@@ -214,6 +251,8 @@
     &__card-wrap{
         position: relative;
         margin-top: 8rem;
+        display: flex;
+        align-items: center;
     }
 
     &__card{
@@ -222,6 +261,7 @@
         flex-direction: column;
         transform: rotateZ(-4deg);
         position: relative;
+        z-index: 1;
 
         &-img{
             width:100%;
@@ -247,19 +287,12 @@
                 line-height: 1.6;
             }
         }
-        &:nth-child(1){
-            position: relative;
-            transform: rotateZ(-4deg);
-            z-index: 1;
-        }
+    }
 
-        &:nth-child(2){
-            position: absolute;
-            top:0;
-            transform: rotateZ(4deg);
-            z-index: 2;
-        }
-
+    &__card--anim{
+        position: absolute;
+        top:0;
+        z-index: 2;
     }
 
     &__content{
@@ -273,18 +306,37 @@
     padding-bottom: 20rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: $color-black;
 
     &__list{
         border-bottom: 1px solid #3a3a3a;
     }
     &__item{
+        position: relative;
+        --active-scale: scale(0);
+        opacity: 0;
+
+        &:before{
+            content: '';
+            position: absolute;
+            display:block;
+            top:0;
+            left:0;
+            width:100%;
+            height:1px;
+            background: #3a3a3a;
+            transform-origin: left;
+            transform: var(--active-scale);
+            transition: transform 0.5s ease-in-out;
+        }
         .faq__question{
             position: relative;
             font-size:1.25rem;
             padding:1.25rem 0;
             cursor: pointer;
-            border-top: 1px solid #3a3a3a;
+            //border-top: 1px solid #3a3a3a;
             padding-right: 10%;
+            opacity: 0;
 
             &:before, &:after{
                 content:'';
@@ -328,7 +380,6 @@
             max-height: 500px; // auto는 transition 적용 안돼서 max-height로 처리
         }
     }
-
     &__btn{
         position: relative;
         display: inline-block;
@@ -354,4 +405,10 @@
         }
     }
     
+}
+
+.active{
+    .faq__item:before{
+        transform: scale(1);
+    }
 }

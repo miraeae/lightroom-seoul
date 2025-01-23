@@ -1,3 +1,4 @@
+/* Header */
 .header{
     position: fixed;
     top: 0;
@@ -5,6 +6,8 @@
     right: 0;
     z-index: 1000;
     transition: top .8s;
+    transform: translateY(-100%);
+    color: $color-white;
 
     &__inner{
         display:grid;
@@ -34,7 +37,7 @@
                 left: 0;
                 width: 0;
                 height: 1px;
-                background-color: white;
+                background-color: $color-white;
                 transform-origin: left;
                 transition: all 0.3s ease-in-out;
             }
@@ -104,6 +107,35 @@
         &:hover{
             background-color: $color-white;
             color:$color-black;
+        }
+    }
+}
+
+*[data-menucolor=black]{
+    header{
+        color:$color-black;
+        .logo{
+            g{
+                fill: $color-black;
+            }
+        }
+        .gnb li:before{
+            background:$color-black;
+        }
+        .util{
+            &__language{
+                svg path{
+                    fill: $color-black;
+                }
+            }
+            &__btn{
+                background-color: rgba(255, 255, 255, 0.3);
+                border-color:$color-black;
+                &:hover{
+                    background-color: $color-black;
+                    color:$color-white;
+                }
+            }
         }
     }
 }

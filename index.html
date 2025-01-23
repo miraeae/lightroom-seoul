@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirae's Portfolio</title>
+    <title>Lightroom Seoul</title>
 
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body data-bgcolor="black" data-menucolor="white">
     <header class="header">
         <div class="header__inner">
             <nav class="gnb">
@@ -52,10 +52,6 @@
                 </a>
             </div>
             <div class="util">
-                <!-- <select name="languages" class="util__language">
-                    <option value="kor">KOR</option>
-                    <option value="eng">ENG</option>
-                <select> -->
                 <ul class="util__language">
                     <li class="util__language-item util__language-item--selected">
                         <a href="#">KOR</a>
@@ -67,49 +63,63 @@
                         <a href="#">ENG</a>
                     </li>
                 </ul>
+                <!-- <select name="languages" class="util__language">
+                    <option value="kor">KOR</option>
+                    <option value="eng">ENG</option>
+                <select> -->
                 <a class="util__btn" href="#">예매하기</a>
             </div>
         </div>
     </header>
     <main>
-        <section class="intro">
-            <h2 class="intro__title">We invite<br>
-                the world's leading<br>
-                creative minds</h2>
+        <section class="intro" data-bgcolor="black" data-menucolor="white">
+            <h2 class="intro__title">
+                <span class="slide-up"><span>We invite</span></span>
+                <span class="slide-up slide-up--descender"><span>the world's leading</span></span>
+                <span class="slide-up"><span>creative minds</span></span>
+            </h2>
         </section>
-        <section class="hero sec">
-            <p class="hero__date">2025.01.22 - 2025.01.31</p>
-            <h2 class="hero__title">COLDPLAY:<br/>
-                A Film For The Future</h2>
-            <div class="hero__row--btm">
-                <p class="hero__desc">새로운 음악을 미래에 전하다. 전 세계 45개국 150명의 비주얼 아티스트들이 선보이는
-                영상미와 함께 COLDPLAY의 ‘Moon Music’ 을 감상할 수 있는 유일한 기회.</p>
-                <a class="hero__btn fill-btn" href="#">
-                    <span>티켓 예매하기</span>
-                    <svg class="svg-arrow" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 16L26 16" stroke="white" stroke-width="1.5"></path>
-                        <path d="M18 8L26 16L18 24" stroke="white" stroke-width="1.5"></path>
-                    </svg>
-                </a>
+        <section class="hero sec" data-bgcolor="start" data-menucolor="white">
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <p class="hero__date">2025.01.22 - 2025.01.31</p>
+                    <h2 class="hero__title">COLDPLAY:<br/>
+                        A Film For The Future</h2>
+                    <div class="hero__row--btm">
+                        <p class="hero__desc">새로운 음악을 미래에 전하다. 전 세계 45개국 150명의 비주얼 아티스트들이 선보이는
+                        영상미와 함께 COLDPLAY의 ‘Moon Music’ 을 감상할 수 있는 유일한 기회.</p>
+                        <a class="hero__btn fill-btn" href="#">
+                            <span>티켓 예매하기</span>
+                            <svg class="svg-arrow" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 16L26 16" stroke="white" stroke-width="1.5"></path>
+                                <path d="M18 8L26 16L18 24" stroke="white" stroke-width="1.5"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="hello sec light-sec">
-            <h4 class="hello__subtitle sec__subtitle">(HELLO)</h4>
-            <h2 class="hello__title">
-                <span>With a <img src="./assets/images/hello-img01.png" alt="lightroom 이미지"> three-dimensional space</span>
-                <span>enhanced by diverse <img src="./assets/images/hello-img02.png" alt="lightroom 이미지"> music</span>
-                <span><img src="./assets/images/hello-img03.png" alt="lightroom 이미지"> lighting, and moving images, the</span>
-                <span>exhibition offers a new <img src="./assets/images/hello-img04.png" alt="lightroom 이미지"> experience</span>
-            </h2>
-            <p class="hello__desc">입체적 공간에 다채로운 음악과 조명 연출,<br>
-                그리고 무빙 이미지가 더해져 새로운 감각적 경험을 선사합니다.</p>
+        <section class="hello sec" data-bgcolor="warmgray" data-menucolor="black">
+            <div class="hello__inner">
+                <h4 class="hello__subtitle sec__subtitle">(HELLO)</h4>
+                <h2 class="hello__title split">
+                    With a <img src="./assets/images/hello-img01.png" alt="lightroom 이미지"> three-dimensional space
+                    enhanced by diverse <img src="./assets/images/hello-img02.png" alt="lightroom 이미지"> music
+                    <img src="./assets/images/hello-img03.png" alt="lightroom 이미지"> lighting, and moving images, the
+                    exhibition offers a new <img src="./assets/images/hello-img04.png" alt="lightroom 이미지"> experience
+                </h2>
+                <p class="hello__desc">입체적 공간에 다채로운 음악과 조명 연출,<br>
+                    그리고 무빙 이미지가 더해져 새로운 감각적 경험을 선사합니다.</p>
+            </div>
         </section>
-        <section class="exhib sec">
+        <section class="exhib sec" data-bgcolor="darkgray" data-menucolor="white">
             <div class="exhib__title-wrap sec__title-wrap">
                 <h4 class="exhib__subtitle sec__subtitle">(WHAT'S ON)</h4>
                 <h2 class="exhib__title sec__title">
-                    Current<br>
-                    Exhibition
+                    <span class="slide-up">
+                        <span>Current</span>
+                        <span>Exhibition</span>
+                    </span>
                 </h2>
             </div>
             <div class="exhib__info">
@@ -119,42 +129,46 @@
                     A Film For The Future</h3>
             </div>
         </section>
-        <section class="about sec">
-            <div class="about__grid">
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img01.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img02.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img03.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img04.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img05.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img06.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img07.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img08.png" alt="lightroom 이미지">
-                </div>
-                <div class="about__grid-item">
-                    <img src="./assets/images/lightroom-grid-img09.png" alt="lightroom 이미지">
+        <section class="about sec" data-bgcolor="black" data-menucolor="white">
+            <div class="about__grid-container">
+                <div class="about__grid">
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img01.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img02.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img03.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img04.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img05.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img06.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img07.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img08.png" alt="lightroom 이미지">
+                    </div>
+                    <div class="about__grid-item">
+                        <img src="./assets/images/lightroom-grid-img09.png" alt="lightroom 이미지">
+                    </div>
                 </div>
             </div>
             <div class="about__title-wrap sec__title-wrap">
                 <h4 class="about__subtitle sec__subtitle">(ABOUT)</h4>
-                <h2 class="about__title sec__title">Lightroom<br>
-                    Seoul</h2>
+                <h2 class="about__title sec__title slide-up">
+                    <span>Lightroom</span>
+                    <span>Seoul</span>
+                </h2>
             </div>
-            <div class="about__experience content">
+            <div class="about__content content">
                 <div class="content__col--half">
                     <h5 class="content__subtitle">(Experience)</h5>
                 </div>
@@ -206,51 +220,53 @@
                 </div>
             </div>
         </section>
-        <section class="space sec">
-            <div class="space__img-wrap space__col--half fade-in">
-                <img class="space__img fade-in__item" src="./assets/images/space-graphic01.png" alt="그래픽 이미지">
-                <img class="space__img fade-in__item" src="./assets/images/space-graphic02.png" alt="그래픽 이미지">
-                <img class="space__img fade-in__item" src="./assets/images/space-graphic03.png" alt="그래픽 이미지">
-                <img class="space__img fade-in__item" src="./assets/images/space-graphic04.png" alt="그래픽 이미지">
-            </div>
-            <div class="space__text-wrap space__col--half">
-                <div class="space__num-wrap fade-in">
-                    <p class="space__num fade-in__item">01</p>
-                    <p class="space__num fade-in__item">02</p>
-                    <p class="space__num fade-in__item">03</p>
-                    <p class="space__num fade-in__item">04</p>
+        <section class="space sec" data-bgcolor="black" data-menucolor="white">
+            <div class="space__inner">
+                <div class="space__img-wrap space__col--half fade-in">
+                    <img class="space__img fade-in__item" src="./assets/images/space-graphic01.png" alt="그래픽 이미지">
+                    <img class="space__img fade-in__item" src="./assets/images/space-graphic02.png" alt="그래픽 이미지">
+                    <img class="space__img fade-in__item" src="./assets/images/space-graphic03.png" alt="그래픽 이미지">
+                    <img class="space__img fade-in__item" src="./assets/images/space-graphic04.png" alt="그래픽 이미지">
                 </div>
-                <div class="space__title-wrap">
-                    <h3 class="space__title">Immersive</h3>
-                    <h3 class="space__title">Large-scale</h3>
-                    <h3 class="space__title">Overwhelming</h3>
-                    <h3 class="space__title">Innovative</h3>
+                <div class="space__text-wrap space__col--half">
+                    <div class="space__num-wrap fade-in">
+                        <p class="space__num fade-in__item">01</p>
+                        <p class="space__num fade-in__item">02</p>
+                        <p class="space__num fade-in__item">03</p>
+                        <p class="space__num fade-in__item">04</p>
+                    </div>
+                    <div class="space__title-wrap">
+                        <h3 class="space__title">Immersive</h3>
+                        <h3 class="space__title">Large-scale</h3>
+                        <h3 class="space__title">Overwhelming</h3>
+                        <h3 class="space__title">Innovative</h3>
+                    </div>
+                    <div class="space__desc-wrap fade-in">
+                        <p class="space__desc fade-in__item">최첨단 기술력이 도입된 LIGHTROOM SEOUL의 몰입형 전시장은
+                            관람객들이 이전까지 한번도 느껴보지 못한 특별한 경험을 제공합니다.</p>
+                        <p class="space__desc fade-in__item">가로 18.5m, 세로 26m, 높이 12m의 대형 공간에 빛으로 연출된 예술,
+                            그리고 오감을 자극하는 화려한 사운드로 가득한 전시를 경험할 수 있습니다.</p>
+                        <p class="space__desc fade-in__item">몰입형 복합 문화공간인 LIGHTROOM SEOUL에서는 예술과 기술이
+                            융합된 압도적인 스케일의 미디어 아트를 감상할 수 있습니다.</p>
+                        <p class="space__desc fade-in__item">특별한 기획을 통해 작가와의 협업을 이끌어낸<br>
+                            LIGHTROOM SEOUL의 전시는<br>
+                            기존 미디어 전시의 수준을 혁신적으로 끌어올린 최고의 플랫폼입니다.</p>
+                    </div>
                 </div>
-                <div class="space__desc-wrap fade-in">
-                <p class="space__desc fade-in__item">최첨단 기술력이 도입된 LIGHTROOM SEOUL의 몰입형 전시장은
-                    관람객들이 이전까지 한번도 느껴보지 못한 특별한 경험을 제공합니다.</p>
-                <p class="space__desc fade-in__item">가로 18.5m, 세로 26m, 높이 12m의 대형 공간에 빛으로 연출된 예술,
-                    그리고 오감을 자극하는 화려한 사운드로 가득한 전시를 경험할 수 있습니다.</p>
-                <p class="space__desc fade-in__item">몰입형 복합 문화공간인 LIGHTROOM SEOUL에서는 예술과 기술이
-                    융합된 압도적인 스케일의 미디어 아트를 감상할 수 있습니다.</p>
-                <p class="space__desc fade-in__item">특별한 기획을 통해 작가와의 협업을 이끌어낸<br>
-                    LIGHTROOM SEOUL의 전시는<br>
-                    기존 미디어 전시의 수준을 혁신적으로 끌어올린 최고의 플랫폼입니다.</p>
+                <div class="space__pagination">
+                    <ul class="space__pagination-list">
+                        <li class="space__pagination-item">Immersive</li>
+                        <li class="space__pagination-item">Large-scale</li>
+                        <li class="space__pagination-item">Overwhelming</li>
+                        <li class="space__pagination-item">Innovative</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="space__pagination">
-                <ul class="space__pagination-list">
-                    <li class="space__pagination-item active">Immersive</li>
-                    <li class="space__pagination-item">Large-scale</li>
-                    <li class="space__pagination-item">Overwhelming</li>
-                    <li class="space__pagination-item">Innovative</li>
-                </ul>
             </div>
         </section>
-        <section class="visit sec light-sec">
+        <section class="visit sec" data-bgcolor="warmgray" data-menucolor="black">
             <div class="visit__title-wrap sec__title-wrap">
                 <h4 class="visit__subtitle sec__subtitle">(Visit)</h4>
-                <h2 class="visit__title sec__title">Your Visit</h2>
+                <h2 class="visit__title sec__title slide-up"><span>Your Visit</span></h2>
             </div>
             <div class="visit__card-wrap">
                 <div class="visit__card">
@@ -263,7 +279,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="visit__card">
+                <div class="visit__card visit__card--anim">
                     <img class="visit__card-img" src="./assets/images/visit-img02.jpg" alt="FnB 이미지">
                     <div class="visit__card-content">
                         <h3 class="visit__card-title">FnB</h3>
@@ -307,7 +323,7 @@
                 </div>
             </div>
         </section>
-        <section class="faq sec">
+        <section class="faq sec" data-menucolor="white">
             <h4 class="faq__subtitle sec__subtitle">(FAQs)</h4>
             <div class="faq__content">
                 <div class="faq__list">
@@ -358,7 +374,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" data-menucolor="white">
         <div class="footer__row footer__row--top">
             <h2 class="footer__title">WE INVITE YOU</h2>
             <div class="footer__btn-wrap">
@@ -429,6 +445,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

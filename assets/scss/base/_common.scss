@@ -1,13 +1,43 @@
 /* Common */
+*[data-bgcolor=start]{
+    background-color:$color-warmgray;
+    .sec[data-bgcolor=black],
+    .sec[data-bgcolor=darkgray]{
+        background-color:$color-warmgray;
+    }
+}
+*[data-bgcolor=black]{
+    background-color:$color-black;
+    .sec[data-bgcolor=warmgray],
+    .sec[data-bgcolor=darkgray]{
+        background-color:$color-black;
+    }
+}
+*[data-bgcolor=darkgray]{
+    background-color:$color-darkgray;
+    .sec[data-bgcolor=warmgray],
+    .sec[data-bgcolor=black]{
+        background-color:$color-darkgray;
+    }
+}
+*[data-bgcolor=warmgray]{
+    background-color:$color-warmgray;
+    .sec[data-bgcolor=black],
+    .sec[data-bgcolor=darkgray]{
+        background-color:$color-warmgray;
+    }
+}
+
 body {
     font-family: 'pretendard', sans-serif;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     color:#fff;
     letter-spacing: -0.04em;
-    background-color:$color-black;
     word-break: keep-all;
+    transition: background-color .5s ease-in-out;
 }
+
 h2, h3{
     font-family: "Marcellus", serif;
     letter-spacing: -0.05em;;
@@ -23,6 +53,7 @@ h2, h3{
     white-space: nowrap;
 }
 
+
 /* Button */
 .fill-btn{
     position: relative;
@@ -35,7 +66,7 @@ h2, h3{
     border-radius: 50px;
     padding:0.5rem 2rem;
     overflow: hidden;
-    transition: 0.3s ease;
+    transition: 0.5s ease;
 
     &:before{
         position: absolute;
@@ -46,7 +77,7 @@ h2, h3{
         left: 0;
         z-index: -1;
         background: $color-white;
-        transition: 0.5s ease;
+        transition: 0.3s ease;
     }
     &:hover{
         color:$color-black;
@@ -60,10 +91,45 @@ h2, h3{
 }
 
 
+/* Effect */
+.split{
+    .line{
+        display: inline-block;
+        overflow: hidden;
+    }
+}
+
+.slide-up{
+    display: block;
+    overflow: hidden;
+    span{
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    &--descender{
+        line-height: 1.2;
+    }
+}
+
+.fade-in{
+    &__item{
+        position: relative;
+        &:not(:first-child){
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            top:0;
+        }
+    }
+}
+
+
 /* Section Common */
 .sec{
     padding-left: $gutter-size;
     padding-right: $gutter-size;
+    transition: background-color .5s ease-in-out;
 
     &__title-wrap{
         text-align: center;
@@ -76,7 +142,10 @@ h2, h3{
         font-size:13vw;
         line-height: 1;
         letter-spacing: -0.06em;
-        margin-top: 18rem;
+        margin-top: 16rem;
+        span{
+            display:block;
+        }
     }
 }
 
@@ -153,12 +222,8 @@ h2, h3{
     }
 }
 
-
-// light Section
-.light-sec{
+.sec[data-bgcolor=warmgray]{
     color:$color-black;
-    background: $color-warmgray;
-
     .content{
         &__item{
             border-color: $color-black;
@@ -169,7 +234,6 @@ h2, h3{
             }
         }
     }
-
     .fill-btn{
         border-color: $color-black;
         &:before{
@@ -180,21 +244,6 @@ h2, h3{
             svg path{
                 stroke: $color-white;
             }
-        }
-    }
-}
-
-
-/* Effect */
-.fade-in{
-    &__item{
-        position: relative;
-        &:not(:first-child){
-            position: absolute;
-            left:50%;
-            transform: translateX(-50%);
-            top:0;
-            opacity: 0;
         }
     }
 }
