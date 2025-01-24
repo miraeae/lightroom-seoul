@@ -1,3 +1,168 @@
+/* Section Common */
+.sec{
+    padding-left: var(--gutter-size);
+    padding-right: var(--gutter-size);
+    transition: background-color .5s ease-in-out;
+
+    &__title-wrap{
+        text-align: center;
+    }
+
+    &__subtitle{
+        font-size:1.25rem;
+        line-height: 1;
+
+        @include tablet {
+            font-size:1.06rem;
+        }
+    }
+
+    &__title{
+        font-size:13vw;
+        letter-spacing: -0.06em;
+        margin-top: 16rem;
+
+        @include tablet {
+            font-size: 5rem;
+            margin-top: 6.6rem;
+        }
+
+        span{
+            display:block;
+        }
+    }
+}
+
+.content{
+    &__subtitle{
+        padding-left: 50%;
+
+        @include tablet {
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+    &__title{
+        font-size:1.75rem;
+        width:100%;
+        font-weight: 600;
+        line-height: 1.5;
+        padding-right: 3.75rem;
+
+        @include tablet {
+            font-size:20px;
+            padding-right: 0;
+        }
+    }
+
+    &__desc{
+        margin-top: 2.5rem;
+        max-width:860px;
+
+        @include tablet {
+            margin-top: 1.3rem;
+        }
+    }
+
+    &__list{
+        margin-top: 6.25rem;
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        column-gap: 1.56rem;
+
+        @include tablet {
+            grid-template-columns:1fr;
+            margin-top: 4rem;
+            column-gap: 0;
+            row-gap: 2.6rem;
+        }
+    }
+
+    &__item{
+        border-top: 1px solid $color-white;
+        display: flex;
+        gap: 2.5rem;
+        padding-top: 2rem;
+        @include tablet {
+            padding-top: 1.2rem;
+        }
+
+        &-num{
+            font-family: $font-en;
+        }
+        &-content{
+            h6{
+                font-size:1.25rem;
+                font-family: $font-en;
+                margin-bottom: 1rem;
+                @include tablet {
+                    margin-bottom: 0.6rem;
+                }
+            }
+            p{
+                font-size:0.875rem;
+            }
+            .content__table{
+                font-size: 0.875rem;
+                color: #cdcdcd;
+                &-title{
+                    position: relative;
+                    padding-right:24px;
+                    &:before{
+                        content:'';
+                        position: absolute;
+                        display:block;
+                        right:12px;
+                        top: 6px;
+                        width:1px;
+                        height:12px;
+                        background:#dadada;
+                        opacity: 0.2;
+                    }
+                }
+                &-title--day{
+                    min-width:6.25rem;
+                }
+                & + p{
+                    color: #cdcdcd;
+                    padding-left:6.25rem;
+                }
+            }
+        }
+    }
+    &__btn{
+        margin-top: 7rem;
+        border-color: #3a3a3a;
+    }
+}
+
+.sec[data-bgcolor=warmgray]{
+    color:$color-black;
+    .content{
+        &__item{
+            border-color: $color-black;
+            &-content{
+                p{
+                    color:#626262;
+                }
+            }
+        }
+    }
+    .fill-btn{
+        border-color: $color-black;
+        &:before{
+            background: $color-black;
+        }
+        &:hover{
+            color:$color-white;
+            svg path{
+                stroke: $color-white;
+            }
+        }
+    }
+}
+
 /* Intro */
 .intro{
     position: absolute;
@@ -5,6 +170,9 @@
     left:0;
     width:100%;
     z-index: 1;
+    @include tablet {
+        height: 40vh;
+    }
 
     &__title{
         position: absolute;
@@ -15,6 +183,12 @@
         text-align: center;
         font-size: 8vw;
         line-height: 1;
+        @include tablet {
+            font-size: 3.75rem;
+        }
+        @include mobile {
+            font-size: 2.5rem;
+        }
         span{
             display: block;
         }
@@ -33,26 +207,35 @@
         position: relative;
         padding-top: 70vh; //height값 잡히게하려고 padding으로 처리
         z-index: -1;
+        @include tablet {
+            padding-top: 40vh;
+        }
+    
     }
     &__content{
         height:100vh;
         background:url(../../assets/images/intro-img-min.jpg) no-repeat center center / cover;
-        padding-left: $gutter-size;
-        padding-right: $gutter-size;
-        padding-bottom: $gutter-size;
+        padding: var(--gutter-size);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
     }
 
     &__date{
-        font-size:1.75rem;
-        margin-bottom: 2rem;
+        font-size: 1.75rem;
+        margin-bottom: 1.2rem;
+        @include mobile {
+            font-size:18px;
+            margin-bottom: 0.5rem;
+        }
     }
     &__title{
         font-size:5.2vw;
         font-weight: 300;
         line-height: 1.1;
+        @include tablet {
+            font-size:2.6rem;
+        }
     }
 
     &__row--btm{
@@ -60,8 +243,15 @@
         display:flex;
         justify-content: space-between;
         border-top:1px solid #fff;
-        margin-top: $gutter-size;
+        margin-top: 3.75rem;
         padding-top: 2.2rem;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 1.6rem;
+            padding-top: 1rem;
+        }
     }
 
     &__desc{
@@ -73,39 +263,64 @@
 /* Hello */
 .hello{
     position: relative;
-    padding-top: $gutter-size;
+    padding-top: 3.75rem;
     width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    justify-items: center;
     height:100vh;
+    
+    @include tablet {
+        align-items: baseline;
+        padding-top: 15vh;
+    }
 
     &__title{
         font-size:3.8vw;
-        max-width:1350px;
+        width:100%;
         margin-top: 3rem;
-        line-height: 1;
+        line-height: 1.5;
+        @include tablet {
+            font-size:6vw;
+            margin-top: 5rem;
+            br{
+                display: none;
+            }
+        }
+        @include mobile {
+            font-size:7vw;
+        }
         span{
-            padding:0.6rem 0;
-            display: block;
+            display: inline-block;
         }
         img{
             width:auto;
             height: 4.35vw;
             vertical-align: middle;
-            padding:0 1.25rem;
         }
+
     }
 
     &__desc{
         margin-top: 4.5rem;
         color:#626262;
+        @include tablet {
+            margin-top: 3.3rem;
+        }
     }
 }
 
 /* Current Exhibition */
 .exhib{
-    padding-top:60vh;
+    padding-top:50vh;
     padding-bottom:20vh;
+    @include tablet{
+        padding-top: 25vh;
+    }
+    &__inner{
+        opacity: 0;
+    }
 
     &__title{
         position: relative;
@@ -118,6 +333,10 @@
         z-index: 1;
         text-align: center;
 
+        @include tablet {
+            transform: translateY(-6%);
+        }
+
         img{
             width: 58vw;
             height: 35vw;
@@ -125,11 +344,22 @@
         &-date{
             font-size:1.75rem;
             margin-top: 3.75rem;
+            @include tablet {
+                font-size:1rem;
+                margin-top: 2rem;
+            }
         }
         &-title{
             font-size: 3.3vw;
             margin-top: 3rem;
             line-height: 1.2;
+            @include tablet {
+                font-size: 4.2vw;
+                margin-top: 1rem;
+            }
+            @include mobile {
+                font-size: 2rem;
+            }
         }
 
     }
@@ -151,9 +381,14 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, minmax(100px, auto));
         gap:5rem;
-        padding: $gutter-size-small;
+        padding: var(--gutter-size-small);
         z-index: 1;
         transform: scale(1);
+
+        @include tablet {
+            gap: 2.6rem;
+        }
+
         &-item{
             img{
             width: 100%;
@@ -172,6 +407,9 @@
         margin-top: 15.63rem;
         position: relative;
         z-index: 2;
+        @include tablet {
+            margin-top: 10rem;
+        }
     }
 }
 
@@ -180,57 +418,101 @@
     height:400vh; //스크롤 영역
 
     &__inner{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-rows: 1fr 70px;
-    height:100vh;
-    align-items: center;
-    }
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 70px;
+        height:100vh;
+        align-items: center;
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
 
-    &__col--half{
+    }
+    &__content{
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        position: relative;
+        @include tablet {
+            gap: 1.5rem;
+        }
+
+        .space__img-wrap{
+            .space__img{
+                width: auto;
+                max-width: 100%;
+                max-height: calc(100vh - 70px);
+                padding:10%;
+    
+                @include tablet {
+                    padding: 0;
+                    width:40vh;
+                    height:40vh;
+                }
+            }
+        }
+
+        .space__text-wrap{
+            .space__num-wrap{
+                margin-bottom: 0.9rem;
+                font-size:1.25rem;
+                @include tablet {
+                    margin-bottom: 0;
+                }
+            }
+
+            .space__title-wrap{
+                position: relative;
+                height: 4.7vw;
+                overflow: hidden;
+                @include tablet {
+                    height: 3.3rem;
+                }
+                .space__title{
+                    font-size:3.8vw;
+                    line-height: 1.3;
+                    @include tablet {
+                        font-size:2.6rem;
+                    }
+                }
+            }
+    
+            .space__desc-wrap{
+                margin-top: 2.8rem;
+                @include tablet {
+                    margin-top: 1.5rem;
+                }
+                .space__desc{
+                    width:100%;
+                    max-width: 410px;
+                    display:inline-block;
+                }
+            }
+        }
     }
 
-    // text
-    &__text-wrap{
-        & > div{
-            position: relative;
-        }
-    }
-    &__num-wrap{
-        margin-bottom: 0.9rem;
-        font-size:1.25rem;
-    }
-    &__title-wrap{
-        height: 4.7vw;
-        overflow: hidden;
-        .space__title{
-            font-size:3.8vw;
-            line-height: 1.2;
-        }
-    }
-    &__desc-wrap{
-        margin-top: 2.8rem;
-        .space__desc{
-            max-width: 410px;
-            display:inline-block;
-        }
-    }
-
-    // pagination
     &__pagination{
         grid-column: 1 / 3;
-        padding-bottom: $gutter-size-small;
+        padding-bottom: var(--gutter-size-small);
         align-self: end;
         &-list{
-            display:grid;
-            grid-template-columns: repeat(4, 1fr);
+            display:flex;
+            flex-direction: row;
+            align-items: flex-end;
             gap: 1.25rem;
         }
         &-item{
             border-bottom: 1px solid $color-white;
+            width:25%;
+            line-height: 2.5;
+            @include tablet {
+                color:$color-black;
+                opacity: .2;
+                &:first-child{
+                    width:40vw;
+                    color:$color-white;
+                    opacity: 1;
+                }
+            }
         }
     }
 }
@@ -244,24 +526,38 @@
     flex-direction: column;
     align-items: center;
 
+    @include tablet {
+        padding-bottom: 9.3rem;
+    }
+
     &__title{
         font-size:8.3vw;
+        @include tablet {
+            font-size: 4.2rem;
+        }
     }
 
     &__card-wrap{
         position: relative;
-        margin-top: 8rem;
+        margin-top: 10rem;
         display: flex;
         align-items: center;
     }
 
     &__card{
-        max-width:580px;
+        width:580px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         transform: rotateZ(-4deg);
         position: relative;
         z-index: 1;
+        @include tablet{
+            max-width:400px;
+        }
+        @include mobile{
+            max-width:280px;
+        }
 
         &-img{
             width:100%;
@@ -274,17 +570,33 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.25rem;
+            @include tablet{
+                padding: 0.6rem;
+            }
 
             .visit__card-title{
                 font-size: 2rem;
                 line-height: 1;
-                white-space: nowrap;
+                @include tablet {
+                    font-size: 15px;
+                }
+                @include mobile{
+                    font-size: 14px;
+                }
             }
             .visit__card-desc{
                 width:60%;
                 font-size:0.88rem;
                 text-align: right;
                 line-height: 1.6;
+                @include tablet {
+                    width:70%;
+                    font-size:10px;
+                }
+                @include mobile{
+                    width:60%;
+                    font-size: 7px;
+                }
             }
         }
     }
@@ -302,15 +614,15 @@
 
 .faq{
     min-height:100vh;
-    padding-top: $gutter-size;
+    padding-top: var(--gutter-size);
     padding-bottom: 20rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     background-color: $color-black;
-
-    &__list{
-        border-bottom: 1px solid #3a3a3a;
+    @include tablet {
+        gap: 4rem;
+        padding-top: 2.28rem;
+        padding-bottom: 10rem;
     }
+
     &__item{
         position: relative;
         --active-scale: scale(0);
@@ -327,16 +639,31 @@
             background: #3a3a3a;
             transform-origin: left;
             transform: var(--active-scale);
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.8s ease-in-out;
+        }
+        &:last-child:after{
+            content: '';
+            position: absolute;
+            display:block;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:1px;
+            background: #3a3a3a;
+            transform-origin: left;
+            transform: var(--active-scale);
+            transition: transform 0.8s ease-in-out;
         }
         .faq__question{
             position: relative;
             font-size:1.25rem;
             padding:1.25rem 0;
             cursor: pointer;
-            //border-top: 1px solid #3a3a3a;
             padding-right: 10%;
             opacity: 0;
+            @include mobile {
+                font-size:1.1rem;
+            }
 
             &:before, &:after{
                 content:'';
@@ -349,6 +676,9 @@
                 top:50%;
                 transform: translateY(-50%) rotate(0);
                 transition: 0.5s ease-in-out;
+                @include tablet {
+                    width:28px;
+                }
             }
             &:after{
                 transform: translateY(-50%) rotate(90deg);
@@ -362,11 +692,12 @@
             span{
                 display: block;
                 padding-right: 10%;
-                padding-left: $gutter-size-small;
+                padding-left: var(--gutter-size-small);
                 padding-bottom: 1.875rem;
             }
         }
     }
+
     &__item.expand{
         .faq__question{
             &:before{
@@ -377,9 +708,10 @@
             }
         }
         .faq__answer{
-            max-height: 500px; // auto는 transition 적용 안돼서 max-height로 처리
+            max-height: 500px; // auto는 transition 적용 안돼서 max-height:px로 처리
         }
     }
+
     &__btn{
         position: relative;
         display: inline-block;
@@ -388,6 +720,16 @@
         line-height: 1;
         display: inline-flex;
         align-items: center;
+        @include tablet {
+            font-size:1.1rem;
+        }
+
+        svg{
+            @include tablet {
+                width: 24px;
+                height: 24px;
+            }
+        }
 
         &:before{
             content:'';
@@ -407,7 +749,7 @@
     
 }
 
-.active{
+.faq.active{
     .faq__item:before{
         transform: scale(1);
     }

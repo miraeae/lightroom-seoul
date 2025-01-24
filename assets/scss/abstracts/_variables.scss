@@ -1,8 +1,8 @@
 // Break Point
-$desktop: 1400px;
-$laptop: 1020px;
-$tablet: 850px;
-$mobile: 650px;
+$laptop: 1280px;
+$tablet: 1024px;
+$mobile: 767px;
+$mobile480: 480px;
 
 // Color
 $color-white:#fff;
@@ -11,9 +11,5 @@ $color-darkgray:#0f0f0f;
 $color-warmgray:#e9e8dd;
 
 // Font
-$font-en:"Marcellus", serif;
-$font-ko:"pretendard", sans-serif;
-
-// Size
-$gutter-size: 3.75rem; //60px
-$gutter-size-small: 2.5rem; //40px
+$font-en: "Marcellus", serif;
+$font-ko: "pretendard", sans-serif;

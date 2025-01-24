@@ -23,16 +23,16 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-html {
-    max-width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-body {
-	line-height: 1;
-	max-width: 100%;
-    overflow: hidden;
-}
+// html {
+//     max-width: 100%;
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+// }
+// body {
+// 	line-height: 1;
+// 	max-width: 100%;
+//     overflow: hidden;
+// }
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
