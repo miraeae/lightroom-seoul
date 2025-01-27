@@ -122,7 +122,7 @@ $(function(){
             trigger: ".hello",
             start: "-=300 center",
             end: "bottom center",
-            toggleActions: "play none none reverse",
+            toggleActions: "restart none none reset",
             // id: "helloSplit",
             // markers: true,
         },
@@ -255,8 +255,6 @@ $(function(){
         }
     })
     
-
-
     gsap.to(".space", {
         scrollTrigger:{
             trigger:".visit",
@@ -290,8 +288,6 @@ $(function(){
         } 
     })
     card.fromTo(".visit__card--anim", {y: window.innerHeight, rotateZ: -18 }, { y:0, rotateZ: 6, duration: 0.8, ease: 'power2.out' });
-
-
 
     // Faq
     $(".faq__question").click(function(){

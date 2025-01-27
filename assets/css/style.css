@@ -964,7 +964,7 @@ h2, h3 {
 }
 @media (max-width: 1024px) {
   .hello__title {
-    font-size: 6vw;
+    font-size: 32px;
     margin-top: 5rem;
   }
   .hello__title br {
@@ -973,7 +973,7 @@ h2, h3 {
 }
 @media (max-width: 767px) {
   .hello__title {
-    font-size: 7.3vw;
+    font-size: 28px;
   }
 }
 .hello__title span {

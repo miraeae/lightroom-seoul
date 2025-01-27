@@ -282,14 +282,14 @@
         margin-top: 3rem;
         line-height: 1.5;
         @include tablet {
-            font-size:6vw;
+            font-size:32px;
             margin-top: 5rem;
             br{
                 display: none;
             }
         }
         @include mobile {
-            font-size:7vw;
+            font-size:28px;
         }
         span{
             display: inline-block;
@@ -708,7 +708,7 @@
             }
         }
         .faq__answer{
-            max-height: 500px; // auto는 transition 적용 안돼서 max-height:px로 처리
+            max-height: 500px;
         }
     }
 
