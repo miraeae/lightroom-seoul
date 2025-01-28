@@ -55,6 +55,7 @@ $(function(){
             trigger: sec,
             start: "top center",
             end: "bottom center",
+            refreshPriority: -1,
             // markers: true,
             // id: `x_${sec.getAttribute('data-menucolor')}`,
             onEnter: () => {
