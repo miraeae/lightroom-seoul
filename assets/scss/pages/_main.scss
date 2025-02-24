@@ -1,8 +1,11 @@
 /* Section Common */
 .sec{
-    padding-left: var(--gutter-size);
-    padding-right: var(--gutter-size);
     transition: background-color .5s ease-in-out;
+
+    &>[class*="__inner"]:not(.pd-none){
+        padding-left: var(--gutter-size);
+        padding-right: var(--gutter-size);
+    }
 
     &__title-wrap{
         text-align: center;
@@ -198,20 +201,19 @@
 
 /* Hero */
 .hero{
-    padding:0;
     width:100%;
     height:100vh;
-    background-color: $color-black;
+    // background-color: $color-black;
 
     &__inner{
         position: relative;
-        padding-top: 70vh; //height값 잡히게하려고 padding으로 처리
+        padding-top: 70vh;
         z-index: -1;
         @include tablet {
             padding-top: 40vh;
         }
-    
     }
+
     &__content{
         height:100vh;
         background:url(../../assets/images/intro-img-min.jpg) no-repeat center center / cover;
@@ -261,19 +263,31 @@
 }
 
 /* Hello */
+body[data-bgcolor=black],
+body[data-bgcolor=warmgray]{
+    .hello {
+        background-color: $color-warmgray;
+    }
+}
+
+body[data-bgcolor=darkgray]{
+    .hello {
+        background-color: $color-darkgray;
+    }
+}
+
 .hello{
     position: relative;
-    padding-top: 3.75rem;
     width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height:100vh;
-    
-    @include tablet {
-        align-items: baseline;
-        padding-top: 15vh;
+
+    &__inner {
+        padding-top: 3.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height:100vh;
     }
 
     &__title{
@@ -313,13 +327,14 @@
 
 /* Current Exhibition */
 .exhib{
-    padding-top:50vh;
-    padding-bottom:20vh;
-    @include tablet{
-        padding-top: 25vh;
-    }
     &__inner{
+        padding-top:50vh;
+        padding-bottom:20vh;
         opacity: 0;
+
+        @include tablet{
+            padding-top: 25vh;
+        }
     }
 
     &__title{
@@ -519,15 +534,18 @@
 
 .visit{
     position: relative;
-    padding-top: 60vh;
-    padding-bottom: 30vh;
     width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    @include tablet {
+    &__inner{
+        padding-top: 60vh;
+        padding-bottom: 30vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
         padding-bottom: 9.3rem;
+    }
     }
 
     &__title{
@@ -613,14 +631,21 @@
 }
 
 .faq{
-    min-height:100vh;
-    padding-top: var(--gutter-size);
-    padding-bottom: 20rem;
-    background-color: $color-black;
-    @include tablet {
-        gap: 4rem;
-        padding-top: 2.28rem;
-        padding-bottom: 10rem;
+    &[data-bgcolor=warmgray] {
+        color: $color-white;
+        background-color: $color-black;
+    }
+
+    &__inner {
+        min-height:100vh;
+        padding-top: var(--gutter-size);
+        padding-bottom: 20rem;
+
+        @include tablet {
+            gap: 4rem;
+            padding-top: 2.28rem;
+            padding-bottom: 10rem;
+        }
     }
 
     &__item{

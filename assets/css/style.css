@@ -60,38 +60,6 @@ a {
   src: url("../font/Marcellus-Regular.woff") format("woff");
 }
 /* Common */
-*[data-bgcolor=start] {
-  background-color: #e9e8dd;
-}
-*[data-bgcolor=start] .sec[data-bgcolor=black],
-*[data-bgcolor=start] .sec[data-bgcolor=darkgray] {
-  background-color: #e9e8dd;
-}
-
-*[data-bgcolor=black] {
-  background-color: #000;
-}
-*[data-bgcolor=black] .sec[data-bgcolor=warmgray],
-*[data-bgcolor=black] .sec[data-bgcolor=darkgray] {
-  background-color: #000;
-}
-
-*[data-bgcolor=darkgray] {
-  background-color: #0f0f0f;
-}
-*[data-bgcolor=darkgray] .sec[data-bgcolor=warmgray],
-*[data-bgcolor=darkgray] .sec[data-bgcolor=black] {
-  background-color: #0f0f0f;
-}
-
-*[data-bgcolor=warmgray] {
-  background-color: #e9e8dd;
-}
-*[data-bgcolor=warmgray] .sec[data-bgcolor=black],
-*[data-bgcolor=warmgray] .sec[data-bgcolor=darkgray] {
-  background-color: #e9e8dd;
-}
-
 @media (max-width: 1024px) {
   html {
     font-size: 15px;
@@ -111,6 +79,15 @@ body {
   letter-spacing: -0.04em;
   word-break: keep-all;
   transition: background-color 0.5s ease-in-out;
+}
+body[data-bgcolor=black] {
+  background-color: #000;
+}
+body[data-bgcolor=darkgray] {
+  background-color: #0f0f0f;
+}
+body[data-bgcolor=warmgray] {
+  background-color: #e9e8dd;
 }
 
 body.scroll-lock {
@@ -486,27 +463,27 @@ h2, h3 {
   width: calc(100% - 40px);
 }
 
-*[data-menucolor=black] header {
+body[data-menucolor=black] header {
   color: #000;
 }
-*[data-menucolor=black] header .logo g {
+body[data-menucolor=black] header .logo g {
   fill: #000;
 }
-*[data-menucolor=black] header .gnb li:before {
+body[data-menucolor=black] header .gnb li:before {
   background: #000;
 }
-*[data-menucolor=black] header .util__language svg path {
+body[data-menucolor=black] header .util__language svg path {
   fill: #000;
 }
-*[data-menucolor=black] header .util__btn {
+body[data-menucolor=black] header .util__btn {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: #000;
 }
-*[data-menucolor=black] header .util__btn:hover {
+body[data-menucolor=black] header .util__btn:hover {
   background-color: #000;
   color: #fff;
 }
-*[data-menucolor=black] header .gnb-mobile-trigger span {
+body[data-menucolor=black] header .gnb-mobile-trigger span {
   background: #000;
 }
 
@@ -514,6 +491,7 @@ h2, h3 {
   background-color: #0f0f0f;
   border-top: 1px solid #fff;
   font-size: 0.875rem;
+  overflow: hidden;
 }
 .footer__row--top {
   padding: var(--gutter-size);
@@ -680,9 +658,11 @@ h2, h3 {
 
 /* Section Common */
 .sec {
+  transition: background-color 0.5s ease-in-out;
+}
+.sec > [class*=__inner]:not(.pd-none) {
   padding-left: var(--gutter-size);
   padding-right: var(--gutter-size);
-  transition: background-color 0.5s ease-in-out;
 }
 .sec__title-wrap {
   text-align: center;
@@ -875,10 +855,8 @@ h2, h3 {
 
 /* Hero */
 .hero {
-  padding: 0;
   width: 100%;
   height: 100vh;
-  background-color: #000;
 }
 .hero__inner {
   position: relative;
@@ -940,21 +918,27 @@ h2, h3 {
 }
 
 /* Hello */
+body[data-bgcolor=black] .hello,
+body[data-bgcolor=warmgray] .hello {
+  background-color: #e9e8dd;
+}
+
+body[data-bgcolor=darkgray] .hello {
+  background-color: #0f0f0f;
+}
+
 .hello {
   position: relative;
-  padding-top: 3.75rem;
   width: 100%;
+}
+.hello__inner {
+  padding-top: 3.75rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 100vh;
-}
-@media (max-width: 1024px) {
-  .hello {
-    align-items: baseline;
-    padding-top: 15vh;
-  }
 }
 .hello__title {
   font-size: 3.8vw;
@@ -995,17 +979,15 @@ h2, h3 {
 }
 
 /* Current Exhibition */
-.exhib {
+.exhib__inner {
   padding-top: 50vh;
   padding-bottom: 20vh;
+  opacity: 0;
 }
 @media (max-width: 1024px) {
-  .exhib {
+  .exhib__inner {
     padding-top: 25vh;
   }
-}
-.exhib__inner {
-  opacity: 0;
 }
 .exhib__title {
   position: relative;
@@ -1209,15 +1191,17 @@ h2, h3 {
 
 .visit {
   position: relative;
+  width: 100%;
+}
+.visit__inner {
   padding-top: 60vh;
   padding-bottom: 30vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (max-width: 1024px) {
-  .visit {
+  .visit__inner {
     padding-bottom: 9.3rem;
   }
 }
@@ -1311,14 +1295,17 @@ h2, h3 {
   padding-top: 12.5rem;
 }
 
-.faq {
+.faq[data-bgcolor=warmgray] {
+  color: #fff;
+  background-color: #000;
+}
+.faq__inner {
   min-height: 100vh;
   padding-top: var(--gutter-size);
   padding-bottom: 20rem;
-  background-color: #000;
 }
 @media (max-width: 1024px) {
-  .faq {
+  .faq__inner {
     gap: 4rem;
     padding-top: 2.28rem;
     padding-bottom: 10rem;

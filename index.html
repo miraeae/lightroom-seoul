@@ -11,8 +11,14 @@
     <link rel="icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./assets/js/script.js" defer></script>
 </head>
-<body data-bgcolor="black" data-menucolor="white">
+<body>
     <header class="header">
         <div class="header__inner">
             <nav class="gnb pc-only">
@@ -121,15 +127,15 @@
         </div>
     </header>
     <main>
-        <section class="intro" data-bgcolor="black" data-menucolor="white">
+        <section class="intro sec" data-bgcolor="black" data-menucolor="white">
             <h2 class="intro__title">
                 <span class="slide-up"><span>We invite</span></span>
                 <span class="slide-up slide-up--descender"><span>the world's leading</span></span>
                 <span class="slide-up"><span>creative minds</span></span>
             </h2>
         </section>
-        <section class="hero sec" data-bgcolor="start" data-menucolor="white">
-            <div class="hero__inner">
+        <section class="hero sec" data-bgcolor="black" data-menucolor="white">
+            <div class="hero__inner pd-none">
                 <div class="hero__content">
                     <p class="hero__date">2025.01.22 - 2025.01.31</p>
                     <h2 class="hero__title">COLDPLAY:<br/>
@@ -181,45 +187,46 @@
             </div>
         </section>
         <section class="about sec" data-bgcolor="black" data-menucolor="white">
-            <div class="about__grid-container">
-                <div class="about__grid">
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img01.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img02.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img03.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img04.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img05.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img06.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img07.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img08.png" alt="lightroom 이미지">
-                    </div>
-                    <div class="about__grid-item">
-                        <img src="./assets/images/lightroom-grid-img09.png" alt="lightroom 이미지">
+            <div class="about__inner">
+                <div class="about__grid-container">
+                    <div class="about__grid">
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img01.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img02.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img03.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img04.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img05.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img06.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img07.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img08.png" alt="lightroom 이미지">
+                        </div>
+                        <div class="about__grid-item">
+                            <img src="./assets/images/lightroom-grid-img09.png" alt="lightroom 이미지">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="about__title-wrap sec__title-wrap">
-                <h4 class="about__subtitle sec__subtitle">(ABOUT)</h4>
-                <h2 class="about__title sec__title slide-up">
-                    <span>Lightroom</span>
-                    <span>Seoul</span>
-                </h2>
-            </div>
-            <div class="about__content content row">
+                <div class="about__title-wrap sec__title-wrap">
+                    <h4 class="about__subtitle sec__subtitle">(ABOUT)</h4>
+                    <h2 class="about__title sec__title slide-up">
+                        <span>Lightroom</span>
+                        <span>Seoul</span>
+                    </h2>
+                </div>
+                <div class="about__content content row">
                 <div class="content__col row__col">
                     <h5 class="content__subtitle">(Experience)</h5>
                 </div>
@@ -269,6 +276,7 @@
                         </svg>
                     </a>
                 </div>
+                </div>
             </div>
         </section>
         <section class="space sec" data-bgcolor="black" data-menucolor="white">
@@ -317,129 +325,133 @@
             </div>
         </section>
         <section class="visit sec" data-bgcolor="warmgray" data-menucolor="black">
-            <div class="visit__title-wrap sec__title-wrap">
-                <h4 class="visit__subtitle sec__subtitle">(Visit)</h4>
-                <h2 class="visit__title sec__title slide-up"><span>Your Visit</span></h2>
-            </div>
-            <div class="visit__card-wrap">
-                <div class="visit__card">
-                    <img class="visit__card-img" src="./assets/images/visit-img01.jpg" alt="LightroomShop 이미지">
-                    <div class="visit__card-content">
-                        <h3 class="visit__card-title">Lightroom Shop</h3>
-                        <p class="visit__card-desc">
-                            라이트룸 전시장에서 나와 정원을 가로질러 가면<br>
-                            숲 속의 상점 같은 ‘라이트룸 숍’을 만날 수 있습니다
-                        </p>
+            <div class="visit__inner">
+                <div class="visit__title-wrap sec__title-wrap">
+                    <h4 class="visit__subtitle sec__subtitle">(Visit)</h4>
+                    <h2 class="visit__title sec__title slide-up"><span>Your Visit</span></h2>
+                </div>
+                <div class="visit__card-wrap">
+                    <div class="visit__card">
+                        <img class="visit__card-img" src="./assets/images/visit-img01.jpg" alt="LightroomShop 이미지">
+                        <div class="visit__card-content">
+                            <h3 class="visit__card-title">Lightroom Shop</h3>
+                            <p class="visit__card-desc">
+                                라이트룸 전시장에서 나와 정원을 가로질러 가면<br>
+                                숲 속의 상점 같은 ‘라이트룸 숍’을 만날 수 있습니다
+                            </p>
+                        </div>
+                    </div>
+                    <div class="visit__card visit__card--anim">
+                        <img class="visit__card-img" src="./assets/images/visit-img02.jpg" alt="FnB 이미지">
+                        <div class="visit__card-content">
+                            <h3 class="visit__card-title">FnB</h3>
+                            <p class="visit__card-desc">
+                                한식 베이스 식사와 바베큐를 즐기고 싶으시다면<br>
+                                콩두 피크닉을 방문해보세요.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="visit__card visit__card--anim">
-                    <img class="visit__card-img" src="./assets/images/visit-img02.jpg" alt="FnB 이미지">
-                    <div class="visit__card-content">
-                        <h3 class="visit__card-title">FnB</h3>
-                        <p class="visit__card-desc">
-                            한식 베이스 식사와 바베큐를 즐기고 싶으시다면<br>
-                            콩두 피크닉을 방문해보세요.
-                        </p>
+                <div class="visit__content content row">
+                    <div class="content__col row__col">
+                        <h5 class="content__subtitle">(Facilities)</h5>
+                    </div>
+                    <div class="content__col row__col">
+                        <p class="content__title">아트숍과 카페, 레스토랑은 물론 온실 및 정원 등 다양한 즐길거리를 갖춰 방문객들에게 풍부한 볼거리와 편안한 휴식 공간을 제공합니다.</p>
+                        <p class="content__desc">라이트룸 서울은 도심 속 오아시스 같은 한강과 푸른 초목으로 둘러싸인 아름다운 전망을 자랑하는 곳입니다. 아름다운 녹지로 둘러 싸인 총 20,000평이 넘는 부지에는 아트숍과 카페, 레스토랑은 물론 온실 및 정원 등 다양한 즐길거리를 갖춰 방문객들에게 풍부한 볼거리와 편안한 휴식 공간을 제공합니다.</p>
+                        <ul class="content__list">
+                            <li class="content__item">
+                                <p class="content__item-num">01</p>
+                                <div class="content__item-content">
+                                    <h6>Lightroom shop</h6>
+                                    <p>라이트룸 전시장에서 나와 산책하듯 정원을 가로질러 가면 숲 속의 상점 같은 ‘라이트룸 숍’을 만날 수 있습니다.</p>
+                                </div>
+                            </li>
+                            <li class="content__item">
+                                <p class="content__item-num">02</p>
+                                <div class="content__item-content">
+                                    <h6>FnB</h6>
+                                    <p>라이트룸 숍의 맞은편에는 ‘줄 서서 먹는 도넛’으로 유명한 디저트 카페 ‘노티드’와 한식 베이스의 다양한 도시락과 바베큐를 즐길 수 있는 ‘콩두 피크닉’ 레스토랑이 자리합니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="visit__btn content__btn fill-btn" href="#">
+                            <span>자세히보기</span>
+                            <svg class="svg-arrow" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 16L26 16" stroke="black" stroke-width="1.5"></path>
+                                <path d="M18 8L26 16L18 24" stroke="black" stroke-width="1.5"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="visit__content content row">
-                <div class="content__col row__col">
-                    <h5 class="content__subtitle">(Facilities)</h5>
-                </div>
-                <div class="content__col row__col">
-                    <p class="content__title">아트숍과 카페, 레스토랑은 물론 온실 및 정원 등 다양한 즐길거리를 갖춰 방문객들에게 풍부한 볼거리와 편안한 휴식 공간을 제공합니다.</p>
-                    <p class="content__desc">라이트룸 서울은 도심 속 오아시스 같은 한강과 푸른 초목으로 둘러싸인 아름다운 전망을 자랑하는 곳입니다. 아름다운 녹지로 둘러 싸인 총 20,000평이 넘는 부지에는 아트숍과 카페, 레스토랑은 물론 온실 및 정원 등 다양한 즐길거리를 갖춰 방문객들에게 풍부한 볼거리와 편안한 휴식 공간을 제공합니다.</p>
-                    <ul class="content__list">
-                        <li class="content__item">
-                            <p class="content__item-num">01</p>
-                            <div class="content__item-content">
-                                <h6>Lightroom shop</h6>
-                                <p>라이트룸 전시장에서 나와 산책하듯 정원을 가로질러 가면 숲 속의 상점 같은 ‘라이트룸 숍’을 만날 수 있습니다.</p>
-                            </div>
-                        </li>
-                        <li class="content__item">
-                            <p class="content__item-num">02</p>
-                            <div class="content__item-content">
-                                <h6>FnB</h6>
-                                <p>라이트룸 숍의 맞은편에는 ‘줄 서서 먹는 도넛’으로 유명한 디저트 카페 ‘노티드’와 한식 베이스의 다양한 도시락과 바베큐를 즐길 수 있는 ‘콩두 피크닉’ 레스토랑이 자리합니다.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a class="visit__btn content__btn fill-btn" href="#">
-                        <span>자세히보기</span>
-                        <svg class="svg-arrow" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 16L26 16" stroke="black" stroke-width="1.5"></path>
-                            <path d="M18 8L26 16L18 24" stroke="black" stroke-width="1.5"></path>
+        </section>
+        <section class="faq sec" data-bgcolor="warmgray" data-menucolor="white">
+            <div class="faq__inner row">
+                <h4 class="faq__subtitle sec__subtitle row__col">(FAQs)</h4>
+                <div class="faq__content row__col">
+                    <div class="faq__list">
+                        <div class="faq__item">
+                            <div class="faq__question">전시 재입장이 가능한가요?</div>
+                            <div class="faq__answer"><span>전시장에서 퇴장 후 재입장은 불가합니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">티켓 구매 후 입장은 언제부터 가능한가요?</div>
+                            <div class="faq__answer"><span>오픈 시간 10분 전부터 입장 가능합니다. 온라인 티켓의 경우 구매 30분 후부터 입장 가능합니다. 안전하고 쾌적한 전시 환경을 위해 예매 시간을 준수하시기 바랍니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">마지막 입장은 언제인가요?</div>
+                            <div class="faq__answer"><span>전시 관람을 위한 마지막 입장은 전시 종료 1시간 전입니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">온라인 티켓이 매진인데 현장 구입이 가능한가요?</div>
+                            <div class="faq__answer"><span>현장 구입 가능합니다. 하지만 현장 상황에 따라 조기 매진되거나, 입장에 대기가 발생할 수 있는 점 양해 바랍니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">영상의 러닝타임은 얼마나 되나요?</div>
+                            <div class="faq__answer"><span>전시의 러닝타임은 약 50분으로 매시간 반복됩니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">전시장 내부에 식음료 반입이 가능한가요?</div>
+                            <div class="faq__answer"><span>네. 전시 관람에 방해가 되는 식사류 외에 간단한 스낵류와 음료는 반입 가능합니다. 쓰레기는 꼭 전시장 밖의 휴지통에 버려주세요.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">전시장 내부에서 사진 촬영이 가능한가요?</div>
+                            <div class="faq__answer"><span>네. 전시장 내부 사진 및 짧은 영상 촬영 가능합니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">셔틀 버스는 어떻게 이용하나요?</div>
+                            <div class="faq__answer"><span>셔틀 버스는 천호역 1번 출구 전방 100m(동국성 앞)에서 시간당 1회, 평일 10명 / 주말 25명까지 선착순으로 탑승가능합니다.<br>
+                                - 운행 구간 : 천호역(5,8호선) - 라이트룸 서울<br>
+                                - 승차 위치 : 천호역 1번 출구 전방 100m (동국성 앞)<br>
+                                - 운행 시간 : 천호역 출발 9:30 - 4:30 한 시간 간격으로 운행 (12:30 미운행) *금,토요일은 18:30까지 연장 운행 / 라이트룸 서울 출발 11:00 - 18:20 한 시간 간격으로 운행 (12:00 미운행) *금,토요일은 20:20까지 연장 운행<br>
+                                - 셔틀 버스 운행 2024년 11월 10일(일요일) 종료</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">주차가 가능한가요?</div>
+                            <div class="faq__answer"><span>네. 주차가 가능합니다.<br>
+                                - 전시 관람자에 한하여 2시간 무료 주차를 제공합니다.<br>
+                                - 아트숍 및 FnB 구매이용자에 한하여 1시간 무료 주차를 제공합니다.<br>
+                                - 무료 주차 최대 3시간 이후는 1시간에 3,000원입니다.<br>
+                                * 주차 공간이 협소하여 주차 후 관람까지 다소 시간이 소요될 수 있습니다. 입장 시간에 맞춰 여유롭게 입차하시기 바랍니다.</span></div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">아트샵 상품은 온라인으로도 구매가 가능한가요?</div>
+                            <div class="faq__answer"><span>온라인으로는 구매가 불가하지만 아트샵 상품들을 미리 확인할 수 있는 PDF링크를 다운 받으실 수 있습니다.</span></div>
+                        </div>
+                    </div>
+                    <a class="faq__btn" href="#">
+                        <span>더보기</span>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 16L26 16" stroke="white" stroke-width="1.5"></path>
+                            <path d="M18 8L26 16L18 24" stroke="white" stroke-width="1.5"></path>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
-        <section class="faq sec row" data-menucolor="white">
-            <h4 class="faq__subtitle sec__subtitle row__col">(FAQs)</h4>
-            <div class="faq__content row__col">
-                <div class="faq__list">
-                    <div class="faq__item">
-                        <div class="faq__question">전시 재입장이 가능한가요?</div>
-                        <div class="faq__answer"><span>전시장에서 퇴장 후 재입장은 불가합니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">티켓 구매 후 입장은 언제부터 가능한가요?</div>
-                        <div class="faq__answer"><span>오픈 시간 10분 전부터 입장 가능합니다. 온라인 티켓의 경우 구매 30분 후부터 입장 가능합니다. 안전하고 쾌적한 전시 환경을 위해 예매 시간을 준수하시기 바랍니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">마지막 입장은 언제인가요?</div>
-                        <div class="faq__answer"><span>전시 관람을 위한 마지막 입장은 전시 종료 1시간 전입니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">온라인 티켓이 매진인데 현장 구입이 가능한가요?</div>
-                        <div class="faq__answer"><span>현장 구입 가능합니다. 하지만 현장 상황에 따라 조기 매진되거나, 입장에 대기가 발생할 수 있는 점 양해 바랍니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">영상의 러닝타임은 얼마나 되나요?</div>
-                        <div class="faq__answer"><span>전시의 러닝타임은 약 50분으로 매시간 반복됩니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">전시장 내부에 식음료 반입이 가능한가요?</div>
-                        <div class="faq__answer"><span>네. 전시 관람에 방해가 되는 식사류 외에 간단한 스낵류와 음료는 반입 가능합니다. 쓰레기는 꼭 전시장 밖의 휴지통에 버려주세요.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">전시장 내부에서 사진 촬영이 가능한가요?</div>
-                        <div class="faq__answer"><span>네. 전시장 내부 사진 및 짧은 영상 촬영 가능합니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">셔틀 버스는 어떻게 이용하나요?</div>
-                        <div class="faq__answer"><span>셔틀 버스는 천호역 1번 출구 전방 100m(동국성 앞)에서 시간당 1회, 평일 10명 / 주말 25명까지 선착순으로 탑승가능합니다.<br>
-                            - 운행 구간 : 천호역(5,8호선) - 라이트룸 서울<br>
-                            - 승차 위치 : 천호역 1번 출구 전방 100m (동국성 앞)<br>
-                            - 운행 시간 : 천호역 출발 9:30 - 4:30 한 시간 간격으로 운행 (12:30 미운행) *금,토요일은 18:30까지 연장 운행 / 라이트룸 서울 출발 11:00 - 18:20 한 시간 간격으로 운행 (12:00 미운행) *금,토요일은 20:20까지 연장 운행<br>
-                            - 셔틀 버스 운행 2024년 11월 10일(일요일) 종료</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">주차가 가능한가요?</div>
-                        <div class="faq__answer"><span>네. 주차가 가능합니다.<br>
-                            - 전시 관람자에 한하여 2시간 무료 주차를 제공합니다.<br>
-                            - 아트숍 및 FnB 구매이용자에 한하여 1시간 무료 주차를 제공합니다.<br>
-                            - 무료 주차 최대 3시간 이후는 1시간에 3,000원입니다.<br>
-                            * 주차 공간이 협소하여 주차 후 관람까지 다소 시간이 소요될 수 있습니다. 입장 시간에 맞춰 여유롭게 입차하시기 바랍니다.</span></div>
-                    </div>
-                    <div class="faq__item">
-                        <div class="faq__question">아트샵 상품은 온라인으로도 구매가 가능한가요?</div>
-                        <div class="faq__answer"><span>온라인으로는 구매가 불가하지만 아트샵 상품들을 미리 확인할 수 있는 PDF링크를 다운 받으실 수 있습니다.</span></div>
-                    </div>
-                </div>
-                <a class="faq__btn" href="#">
-                    <span>더보기</span>
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 16L26 16" stroke="white" stroke-width="1.5"></path>
-                        <path d="M18 8L26 16L18 24" stroke="white" stroke-width="1.5"></path>
-                    </svg>
-                </a>
-            </div>
-        </section>
     </main>
-    <footer class="footer" data-menucolor="white">
+    <footer class="footer">
         <div class="footer__row footer__row--top">
             <h2 class="footer__title">WE INVITE YOU</h2>
             <div class="footer__btn-wrap">
@@ -504,14 +516,5 @@
             <small class="tb-show">© 2023 LIGHTROOM. ALL RIGHT RESERVED.</small>
         </div>
     </footer>
-
-    
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
     background-color: $color-darkgray;
     border-top: 1px solid $color-white;
     font-size:0.875rem;
+    overflow: hidden;
 
     &__row--top{
         padding: var(--gutter-size);

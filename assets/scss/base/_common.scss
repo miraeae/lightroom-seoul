@@ -1,33 +1,4 @@
 /* Common */
-*[data-bgcolor=start]{
-    background-color:$color-warmgray;
-    .sec[data-bgcolor=black],
-    .sec[data-bgcolor=darkgray]{
-        background-color:$color-warmgray;
-    }
-}
-*[data-bgcolor=black]{
-    background-color:$color-black;
-    .sec[data-bgcolor=warmgray],
-    .sec[data-bgcolor=darkgray]{
-        background-color:$color-black;
-    }
-}
-*[data-bgcolor=darkgray]{
-    background-color:$color-darkgray;
-    .sec[data-bgcolor=warmgray],
-    .sec[data-bgcolor=black]{
-        background-color:$color-darkgray;
-    }
-}
-*[data-bgcolor=warmgray]{
-    background-color:$color-warmgray;
-    .sec[data-bgcolor=black],
-    .sec[data-bgcolor=darkgray]{
-        background-color:$color-warmgray;
-    }
-}
-
 html{
     @include tablet {
         font-size: 15px;
@@ -45,6 +16,18 @@ body {
     letter-spacing: -0.04em;
     word-break: keep-all;
     transition: background-color .5s ease-in-out;
+
+    &[data-bgcolor=black]{
+        background-color:$color-black;
+    }
+
+    &[data-bgcolor=darkgray]{
+        background-color:$color-darkgray;
+    }
+
+    &[data-bgcolor=warmgray]{
+        background-color:$color-warmgray;
+    }    
 }
 
 body.scroll-lock {
@@ -66,7 +49,6 @@ body.scroll-lock {
         --gutter-size: 20px;
         --gutter-size-small: 10px;
     }
-
 }
 
 h2, h3{
