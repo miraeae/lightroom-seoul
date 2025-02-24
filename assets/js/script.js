@@ -1,4 +1,6 @@
 $(function(){
+    gsap.registerPlugin(ScrollTrigger);
+
     $("html, body").animate({ scrollTop: 0 }, 500); 
 
     //Header
@@ -58,19 +60,15 @@ $(function(){
             refreshPriority: -1,
             // markers: true,
             // id: `x_${sec.getAttribute('data-menucolor')}`,
-            onEnter: () => {
-                document.body.setAttribute('data-bgcolor', sec.getAttribute('data-bgcolor'));
-                document.body.setAttribute('data-menucolor', sec.getAttribute('data-menucolor'));
-            },
-            onEnterBack: () => {
-                document.body.setAttribute('data-bgcolor', sec.getAttribute('data-bgcolor'));
-                document.body.setAttribute('data-menucolor', sec.getAttribute('data-menucolor'));
-            },
+            onEnter: () => updateColors(sec),
+            onEnterBack: () => updateColors(sec),
         });
     });
 
-
-    gsap.registerPlugin(ScrollTrigger);
+    function updateColors(sec) {
+        document.body.setAttribute("data-bgcolor", sec.getAttribute("data-bgcolor"));
+        document.body.setAttribute("data-menucolor", sec.getAttribute("data-menucolor"));
+    }
 
     // Text slide up
     gsap.utils.toArray(".sec:not(.intro) .slide-up").forEach((slideUp) => {
@@ -138,16 +136,13 @@ $(function(){
         scrollTrigger:{
             trigger:".hello",
             start:"bottom center",
-            end:"top bottom",
+            end:"bottom top",
             // markers: true,
             // id: "helloLeave",
             onEnter:()=>{
-                gsap.to(".hello__inner", {autoAlpha:"1"})
-            },
-            onLeave:()=>{
                 gsap.to(".hello__inner", {autoAlpha:"0"})
             },
-            onEnterBack:()=>{
+            onLeaveBack:()=>{
                 gsap.to(".hello__inner", {autoAlpha:"1"})
             }
         }
@@ -189,7 +184,7 @@ $(function(){
 
     //Space
     ScrollTrigger.matchMedia({
-        "(min-width: 1024px)":function(){
+        "(min-width: 1025px)":function(){
             const space = gsap.timeline({defaults: {duration: 300},
                 scrollTrigger: {
                     trigger: ".space",
@@ -202,7 +197,8 @@ $(function(){
                     // id: "space",
                 }
             })
-            space.to(".fade-in__item:nth-child(1)", { autoAlpha: 0, delay: 600 })
+            space
+            .to(".fade-in__item:nth-child(1)", { autoAlpha: 0, delay: 600 })
             .to(".space__pagination-item:nth-child(1)", { autoAlpha: 0.2 }, "<")
             .to(".space__title", { yPercent:-100 }, "<")
         
@@ -223,7 +219,7 @@ $(function(){
             .to(".fade-in__item:nth-child(4)", { autoAlpha: 1, duration: 600 })
             .to(".space__pagination-item:nth-child(4)", { autoAlpha: 1, duration: 600 }, "<")
         },
-        "(max-width: 1021px)":function(){
+        "(max-width: 1024px)":function(){
             const space = gsap.timeline({defaults: {duration: 300},
                 scrollTrigger: {
                     trigger: ".space",
