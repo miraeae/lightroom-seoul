@@ -71,6 +71,10 @@ a {
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: "pretendard", sans-serif;
   line-height: 1.8;
@@ -1181,9 +1185,10 @@ body[data-bgcolor=darkgray] .hello {
   .space__pagination-item {
     color: #000;
     opacity: 0.2;
+    width: 20%;
   }
   .space__pagination-item:first-child {
-    width: 40vw;
+    width: 40%;
     color: #fff;
     opacity: 1;
   }

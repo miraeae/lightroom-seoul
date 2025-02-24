@@ -522,8 +522,9 @@ body[data-bgcolor=darkgray]{
             @include tablet {
                 color:$color-black;
                 opacity: .2;
+                width: 20%;
                 &:first-child{
-                    width:40vw;
+                    width:40%;
                     color:$color-white;
                     opacity: 1;
                 }

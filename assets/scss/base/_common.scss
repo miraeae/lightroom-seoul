@@ -8,6 +8,10 @@ html{
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: $font-ko;
     line-height: 1.8;
